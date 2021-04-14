@@ -10,7 +10,9 @@ namespace cse465 {
             // TODO:   implement the map operation, which you 
             //         should be familiar with already from scheme
             //         But use a loop -- not recursion!
-            return null;
+            List<R> result = new List<R>();
+            
+            return result;
         }
 
 
@@ -29,19 +31,19 @@ namespace cse465 {
 
         public static void printIfEven(int x) {
             if ((x % 2) == 0) {
-                Console.WriteLine("Even");
+                Console.WriteLine($"{x,-6} - Even");
             } else {
-                Console.WriteLine("Odd");
+                Console.WriteLine($"{x,-6} - Odd");
             }
         }
 
         public static void printIfPositive(int x) {
             if (x > 0) {
-                Console.WriteLine("Positive");
+                Console.WriteLine($"{x,-6} - Positive");
             } else if (x < 0) {
-                Console.WriteLine("Negative");
+                Console.WriteLine($"{x,-6} - Negative");
             } else {
-                Console.WriteLine("Zero");
+                Console.WriteLine($"{x,-6} - Zero");
             }
         }
 

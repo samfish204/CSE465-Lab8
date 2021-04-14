@@ -8,11 +8,8 @@ check-delegates: delegates.output
 check-parameters: parameters.output
 	cmp parameters.output parameters.expected
 
-delegates.output: delegates.exe 
-	mono delegates.exe < delegates.input > delegates.output
-
-parameters.output: parameters.exe 
-	mono delegates.exe < delegates.input > delegates.output
+%.output: %.exe 
+	mono $*.exe < $*.input > $*.output
 
 %.exe : %.cs
 	csc $*.cs

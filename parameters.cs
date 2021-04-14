@@ -1,8 +1,14 @@
+using System;
 
 namespace Params {
     class Program {
         // TODO: Write a static 'swap' method
         //       The method takes two parameters and excahnges their values. 
+        public static void Swap(int a, int b) {
+            int tmp = a;
+            a = b;
+            b = tmp;
+        }
 
 
         // TODO: Write a static bool TryParseInt  function that 
@@ -14,27 +20,43 @@ namespace Params {
         //       Use Int32.Parse to convert the strin to an integer
         //       Use a Try/Catch block to handle one of the documented exceptions
         //       Please refer to the docs for Int32.Parse to see the list of exceptions to handle. 
+        public static bool TryParseInt(int value) {
+            try {
+                value = Int32.Parse(Console.ReadLine());
+                return true;
+            } catch (Exception) {
+                value = -1;
+                return false;
+            }
+        }
 
 
         public static void Main() {
-            int a, b;
+            int a=0, b=0;
             
-            Console.WriteLine("Please enter a number for a: ")
-            while (not TryParseInt(a)) { //<-- You will need to change something here
-                Console.WriteLine("ERROR - Invalid number.")
-                Console.Write("Please enter a number for a:")
+            Console.WriteLine();
+            Console.Write("Please enter a number for a: ");
+            while (!TryParseInt( a)) //<-- You will need to change something here
+            { 
+                Console.WriteLine();
+                Console.WriteLine("ERROR - Invalid number.");
+                Console.Write("Please enter a number for a:");
             }
-
-
-            Console.WriteLine("Please enter number for b : ")
-            while (not TryParseInt(out b)) { //<-- You will need to change somehing here
-                Console.WriteLine("ERROR - Invalid number.")
-                Console.Write("Please enter a number for b:")
+            Console.WriteLine();
+            Console.WriteLine($"a has been set to {a}");
+            Console.WriteLine();
+            Console.Write("Please enter number for b : ");
+            while (!TryParseInt( b)) { //<-- You will need to change somehing here
+                Console.WriteLine();
+                Console.WriteLine("ERROR - Invalid number.");
+                Console.Write("Please enter a number for b:");
             }
-
+            Console.WriteLine();
+            Console.WriteLine($"b has been set to {b}");
+            Console.WriteLine();
             Console.WriteLine($"Before: a={a, -6} and b={b,-6}");
             
-            swap(a, b); //<-- You will need to make a change to this line
+            Swap( a,  b); //<-- You will need to make a change to this line
 
             Console.WriteLine($"After : a={a, -6} and b={b,-6}");
         }
