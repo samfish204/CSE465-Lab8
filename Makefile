@@ -13,3 +13,6 @@ check-parameters: parameters.output
 
 %.exe : %.cs
 	csc $*.cs
+
+update:
+ 	git pull https://gitlab.csi.miamioh.edu/cse465/instructor/lab-09 master
