@@ -57,7 +57,7 @@ namespace cse465 {
 
             // Cube each number using a lambda expression
             numbers = Map<int, int>(numbers, (x) => x*x*x );
-            Console.WriteLine($"Squared: {string.Join(",", numbers)}");
+            Console.WriteLine($"Cubed: {string.Join(",", numbers)}");
 
    
             NumberHandler handler = null;      
