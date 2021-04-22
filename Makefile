@@ -1,6 +1,6 @@
 
-
 check: check-delegates check-parameters
+	@echo Success
 
 check-delegates: delegates.output
 	cmp delegates.output delegates.expected 
