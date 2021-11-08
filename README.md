@@ -27,26 +27,4 @@ You can see the output of a program by typing
 make delegates.output
 icdiff delegates.output delegates.expected
 ``` 
-> NOTE:  This will require you have already installed icdiff
->  ```
->  apt update 
->  apt install icdiff
->  ```
->
 
-# Submitting
-1. Make sure you are up to date with the master branch of instructor repository
-   ```
-   git pull  https://gitlab.csi.miamioh.edu/cse465/instructor/lab-09.git master
-   ```
-2. Make sure you pass the checks
-   ```
-   make check
-   ```
-3. Make sure you have committed and pushed your latest local changes
-   ```
-   git add -u
-   git commit -m "Final submission"
-   git push
-   ```
-4. Submit the URL of you repository to canvas

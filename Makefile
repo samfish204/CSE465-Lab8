@@ -12,7 +12,7 @@ check-parameters: parameters.output
 	mono $*.exe < $*.input > $*.output
 
 %.exe : %.cs
-	csc $*.cs
+	mcs $*.cs
 
 update:
- 	git pull https://gitlab.csi.miamioh.edu/cse465/instructor/lab-09 master
+ 	git pull https://gitlab.csi.miamioh.edu/cse465/instructor/lab-08 master
