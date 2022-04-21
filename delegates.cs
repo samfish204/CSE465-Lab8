@@ -11,6 +11,10 @@ namespace cse465 {
             //         should be familiar with already from scheme
             //         But use a loop -- not recursion!
             List<R> result = new List<R>();
+
+            foreach(T elem in theList) {
+              result.Add(f(elem));
+            }
             
             return result;
         }
@@ -49,6 +53,16 @@ namespace cse465 {
 
         delegate void NumberHandler(int x);
 
+       // public class Foo {
+         // int x;
+         // public Foo(int x) {
+           // this.x = x;
+         // }
+         // public void DoSomething(int y) {
+           // Console.WriteLine($"{y} + {x} = {y+x}");
+          // }
+       //} 
+
         public static void Main() {
             List<string> values = new List<string>(Console.ReadLine().Split(','));
             Console.WriteLine($"Read in: {string.Join(",", values)}");
@@ -62,8 +76,13 @@ namespace cse465 {
    
             NumberHandler handler = null;      
             // TODO -- add printIfEvens to the delegate `handler`
+            handler = printIfEven;
             // TODO -- add printIfPositive to the delegate `handler`
+            handler += printIfPositive;
 
+            //f = new Foo(6);
+            //handler = f.DoSomething;
+          
             // This demonstrates the way delegate can be used as callbacks in C#
             foreach (int n in numbers) {
                 if (handler != null){
